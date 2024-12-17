@@ -13,9 +13,10 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url('https://in.images.search.yahoo.com/images/view;_ylt=Awrx_mY.i2FnndYbOjK9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkA2UyYWNiNjYxMTc4ZTA1ZDFmMDQwZmY4YWRkYTFlYzE4BGdwb3MDMTI1BGl0A2Jpbmc-?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Danime%2Bcool%2Bimage%26type%3DE210IN660G0%26fr%3Dmcafee%26fr2%3Dpiv-web%26nost%3D1%26tab%3Dorganic%26ri%3D125&w=1852&h=1217&imgurl=wallpapers.com%2Fimages%2Fhd%2Fcool-anime-boy-pfp-noragami-yato-9a3ahwo5410y90b9.jpg&rurl=https%3A%2F%2Fwallpapers.com%2Fcool-anime-pfp&size=161KB&p=anime+cool+image&oid=e2acb661178e05d1f040ff8adda1ec18&fr2=piv-web&fr=mcafee&tt=%5B100%2B%5D+Cool+Anime+Pfp+Wallpapers+%7C+Wallpapers.com&b=121&ni=21&no=125&ts=&tab=organic&sigr=ZtbFjhz2F0es&sigb=2raiyhBj.QLE&sigi=_M5vRaXWSkIN&sigt=4nfBs9XWMfCD&.crumb=xivyyMpv0Gg&fr=mcafee&fr2=piv-web&type=E210IN660G0'); /* Replace with a trendy anime image URL */
+            background-image: url('https://i.pinimg.com/originals/78/2f/03/782f032235bd4b00c80de140b8e70538.jpg'); /* Replace with a direct image URL */
             background-size: cover;
             background-position: center;
+            overflow: hidden;
         }
 
         .container {
@@ -24,6 +25,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
         }
 
         .fact-box {
@@ -46,11 +48,26 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         button:hover {
             background-color: #e91e63;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100px); }
+            to { transform: translateY(0); }
+        }
+
+        .container {
+            animation: fadeIn 2s ease-in-out, slideIn 1s ease-out;
         }
     </style>
 </head>
@@ -108,3 +125,4 @@
     </script>
 </body>
 </html>
+
