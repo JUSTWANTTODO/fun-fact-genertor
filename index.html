@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Fun Fact Generator</title>
+    <title>Anime Fun Fact Generator</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -13,22 +13,22 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-image: url('https://in.images.search.yahoo.com/images/view;_ylt=Awrx_mY.i2FnndYbOjK9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkA2UyYWNiNjYxMTc4ZTA1ZDFmMDQwZmY4YWRkYTFlYzE4BGdwb3MDMTI1BGl0A2Jpbmc-?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Danime%2Bcool%2Bimage%26type%3DE210IN660G0%26fr%3Dmcafee%26fr2%3Dpiv-web%26nost%3D1%26tab%3Dorganic%26ri%3D125&w=1852&h=1217&imgurl=wallpapers.com%2Fimages%2Fhd%2Fcool-anime-boy-pfp-noragami-yato-9a3ahwo5410y90b9.jpg&rurl=https%3A%2F%2Fwallpapers.com%2Fcool-anime-pfp&size=161KB&p=anime+cool+image&oid=e2acb661178e05d1f040ff8adda1ec18&fr2=piv-web&fr=mcafee&tt=%5B100%2B%5D+Cool+Anime+Pfp+Wallpapers+%7C+Wallpapers.com&b=121&ni=21&no=125&ts=&tab=organic&sigr=ZtbFjhz2F0es&sigb=2raiyhBj.QLE&sigi=_M5vRaXWSkIN&sigt=4nfBs9XWMfCD&.crumb=xivyyMpv0Gg&fr=mcafee&fr2=piv-web&type=E210IN660G0'); /* Replace with a trendy anime image URL */
+            background-size: cover;
+            background-position: center;
         }
 
         .container {
             text-align: center;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
         .fact-box {
             margin: 20px 0;
-            font-size: 1.3em;
+            font-size: 1.5em;
             color: #333;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
@@ -38,20 +38,11 @@
             opacity: 1;
         }
 
-        input[type="text"] {
-            padding: 10px;
-            font-size: 1em;
-            width: calc(100% - 22px);
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
         button {
             padding: 12px 24px;
             font-size: 1.1em;
             color: #fff;
-            background-color: #007BFF;
+            background-color: #ff4081;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -59,43 +50,60 @@
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #e91e63;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Interactive Fun Fact Generator</h1>
-        <input type="text" id="userInput" placeholder="Enter a word">
+        <h1>Anime Fun Fact Generator</h1>
         <div id="fact" class="fact-box">
-            Enter a word and click the button to see a fun fact!
+            Click the button to see a fun fact!
         </div>
         <button id="generateFactBtn">Generate Fact</button>
     </div>
     <script>
         const facts = [
-            "Did you know that {word} is a fascinating topic in the world of anime?",
-            "The history of {word} in anime is quite intriguing.",
-            "Many anime series explore the theme of {word}.",
-            "The concept of {word} has been a popular subject in anime.",
-            "Anime often portrays {word} in unique and creative ways."
+            "Anime is a style of animation that originated in Japan and has become popular worldwide.",
+            "The word 'anime' is derived from the English word 'animation'.",
+            "The first anime is considered to be 'Namakura Gatana', a short film released in 1917.",
+            "Studio Ghibli, founded by Hayao Miyazaki and Isao Takahata, is one of the most famous anime studios.",
+            "'Spirited Away', directed by Hayao Miyazaki, won the Academy Award for Best Animated Feature in 2003.",
+            "Anime covers a wide range of genres, including action, romance, horror, and science fiction.",
+            "The longest-running anime series is 'Sazae-san', which has been airing since 1969.",
+            "Anime is often adapted from manga, which are Japanese comic books or graphic novels.",
+            "The anime industry in Japan is a multi-billion dollar industry, with a significant global fanbase.",
+            "Anime conventions, such as Anime Expo and Otakon, attract thousands of fans each year.",
+            "The anime 'Attack on Titan' is known for its intense action and complex storyline.",
+            "'Naruto' and 'Naruto Shippuden' are among the most popular anime series worldwide.",
+            "'Dragon Ball Z' introduced many to anime and remains a beloved classic.",
+            "'One Piece' is one of the longest-running anime series with over 1000 episodes.",
+            "'My Hero Academia' has gained a massive following for its superhero theme.",
+            "'Demon Slayer' broke box office records with its movie 'Mugen Train'.",
+            "'Death Note' is a psychological thriller that has captivated audiences globally.",
+            "'Sailor Moon' is a pioneering series in the magical girl genre.",
+            "'Pokémon' is not only an anime but a global phenomenon with games and merchandise.",
+            "'Cowboy Bebop' is renowned for its music and unique blend of genres.",
+            "'Neon Genesis Evangelion' is a landmark series in the mecha genre.",
+            "'Fullmetal Alchemist: Brotherhood' is praised for its storytelling and character development.",
+            "'Sword Art Online' explores virtual reality worlds with a gripping narrative.",
+            "'Tokyo Ghoul' is known for its dark themes and complex characters.",
+            "'Your Name' is a critically acclaimed anime film with stunning visuals.",
+            "'Akira' is a groundbreaking film that influenced many creators worldwide.",
+            "'Bleach' follows the adventures of Ichigo Kurosaki, a Soul Reaper.",
+            "'Fairy Tail' is celebrated for its magical adventures and strong friendships.",
+            "'Hunter x Hunter' is praised for its intricate plot and character depth.",
+            "'JoJo's Bizarre Adventure' is famous for its unique art style and storytelling."
         ];
 
         document.getElementById('generateFactBtn').addEventListener('click', function() {
-            const userInput = document.getElementById('userInput').value.trim();
             const factBox = document.getElementById('fact');
-            if (userInput) {
-                const randomIndex = Math.floor(Math.random() * facts.length);
-                const fact = facts[randomIndex].replace("{word}", userInput);
-                factBox.classList.remove('show');
-                setTimeout(() => {
-                    factBox.textContent = fact;
-                    factBox.classList.add('show');
-                }, 500);
-            } else {
-                factBox.textContent = "Please enter a word to generate a fun fact.";
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factBox.classList.remove('show');
+            setTimeout(() => {
+                factBox.textContent = facts[randomIndex];
                 factBox.classList.add('show');
-            }
+            }, 500);
         });
     </script>
 </body>
