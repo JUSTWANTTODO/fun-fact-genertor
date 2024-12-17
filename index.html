@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-box {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Fact Generator</h1>
+        <div id="fact" class="fact-box">
+            Click the button to see a fun fact!
+        </div>
+        <button id="generateFactBtn">Generate Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Anime is a style of animation that originated in Japan and has become popular worldwide.",
+            "The word 'anime' is derived from the English word 'animation'.",
+            "The first anime is considered to be 'Namakura Gatana', a short film released in 1917.",
+            "Studio Ghibli, founded by Hayao Miyazaki and Isao Takahata, is one of the most famous anime studios.",
+            "'Spirited Away', directed by Hayao Miyazaki, won the Academy Award for Best Animated Feature in 2003.",
+            "Anime covers a wide range of genres, including action, romance, horror, and science fiction.",
+            "The longest-running anime series is 'Sazae-san', which has been airing since 1969.",
+            "Anime is often adapted from manga, which are Japanese comic books or graphic novels.",
+            "The anime industry in Japan is a multi-billion dollar industry, with a significant global fanbase.",
+            "Anime conventions, such as Anime Expo and Otakon, attract thousands of fans each year."
+        ];
+
+        document.getElementById('generateFactBtn').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
