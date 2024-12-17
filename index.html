@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Fact Generator</title>
+    <title>Interactive Fun Fact Generator</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -13,22 +13,22 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url('https://example.com/anime-background.jpg'); /* Replace with a trendy image URL */
-            background-size: cover;
-            background-position: center;
+            background-color: #f0f0f0;
         }
 
         .container {
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
         }
 
         .fact-box {
             margin: 20px 0;
-            font-size: 1.5em;
+            font-size: 1.3em;
             color: #333;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
@@ -38,11 +38,20 @@
             opacity: 1;
         }
 
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            width: calc(100% - 22px);
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
         button {
             padding: 12px 24px;
             font-size: 1.1em;
             color: #fff;
-            background-color: #ff4081;
+            background-color: #007BFF;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -50,40 +59,43 @@
         }
 
         button:hover {
-            background-color: #e91e63;
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Fun Fact Generator</h1>
+        <h1>Interactive Fun Fact Generator</h1>
+        <input type="text" id="userInput" placeholder="Enter a word">
         <div id="fact" class="fact-box">
-            Click the button to see a fun fact!
+            Enter a word and click the button to see a fun fact!
         </div>
         <button id="generateFactBtn">Generate Fact</button>
     </div>
     <script>
         const facts = [
-            "Anime is a style of animation that originated in Japan and has become popular worldwide.",
-            "The word 'anime' is derived from the English word 'animation'.",
-            "The first anime is considered to be 'Namakura Gatana', a short film released in 1917.",
-            "Studio Ghibli, founded by Hayao Miyazaki and Isao Takahata, is one of the most famous anime studios.",
-            "'Spirited Away', directed by Hayao Miyazaki, won the Academy Award for Best Animated Feature in 2003.",
-            "Anime covers a wide range of genres, including action, romance, horror, and science fiction.",
-            "The longest-running anime series is 'Sazae-san', which has been airing since 1969.",
-            "Anime is often adapted from manga, which are Japanese comic books or graphic novels.",
-            "The anime industry in Japan is a multi-billion dollar industry, with a significant global fanbase.",
-            "Anime conventions, such as Anime Expo and Otakon, attract thousands of fans each year."
+            "Did you know that {word} is a fascinating topic in the world of anime?",
+            "The history of {word} in anime is quite intriguing.",
+            "Many anime series explore the theme of {word}.",
+            "The concept of {word} has been a popular subject in anime.",
+            "Anime often portrays {word} in unique and creative ways."
         ];
 
         document.getElementById('generateFactBtn').addEventListener('click', function() {
+            const userInput = document.getElementById('userInput').value.trim();
             const factBox = document.getElementById('fact');
-            const randomIndex = Math.floor(Math.random() * facts.length);
-            factBox.classList.remove('show');
-            setTimeout(() => {
-                factBox.textContent = facts[randomIndex];
+            if (userInput) {
+                const randomIndex = Math.floor(Math.random() * facts.length);
+                const fact = facts[randomIndex].replace("{word}", userInput);
+                factBox.classList.remove('show');
+                setTimeout(() => {
+                    factBox.textContent = fact;
+                    factBox.classList.add('show');
+                }, 500);
+            } else {
+                factBox.textContent = "Please enter a word to generate a fun fact.";
                 factBox.classList.add('show');
-            }, 500);
+            }
         });
     </script>
 </body>
